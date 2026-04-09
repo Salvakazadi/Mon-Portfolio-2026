@@ -216,15 +216,354 @@ footer p {
     margin-bottom: 1.2rem;
 }
 
-footer a {
+:root {
+    --violet-doux: #6C63FF;
+    --violet-fonce: #534EDD;
+    --orange-vif: #FFA726;
+    --gris-tres-fonce: #333;
+    --gris-fonce: #666;
+    --gris-tres-clair: #F8F8F8;
+    --gris-clair: #EEE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gris-tres-clair);
+    font-family: Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: white;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+header div a {
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--violet-doux);
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px 0;
+}
+
+ul li a:hover {
+    color: var(--violet-doux);
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: var(--violet-doux);
+    transition: width 0.3s ease;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}
+
+a.active {
+    color: var(--violet-doux);
+}
+
+a.active::after {
+    width: 100%;
+}
+
+/* --- SECTION HERO (Accueil) --- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    text-align: center;
+    margin: 10rem 2rem;
+}
+
+.hero img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid var(--violet-doux);
+}
+
+.hero h1 {
+    color: var(--violet-doux);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.hero p {
+    color: var(--gris-fonce);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.hero a {
+    text-decoration: none;
     display: inline-block;
-    font-size: 1.6rem;
+    background-color: var(--violet-doux);
     color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero a:hover {
+    background-color: var(--violet-fonce);
+    transform: translateY(-3px);
+}
+
+/* --- SECTION A PROPOS & TITRES --- */
+.apropos {
+    width: 800px;
+    margin: 6rem auto;
+    text-align: center;
+}
+
+section h2 {
+    color: var(--violet-doux);
+    font-size: 2.6rem;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--violet-doux);
+    margin: 1.2rem auto;
+    border-radius: 2px;
+}
+
+.apropos p {
+    margin-bottom: 2rem;
+    color: var(--gris-fonce);
+    font-size: 1.2rem;
+}
+
+/* --- TABLEAU COMPETENCES --- */
+.competences table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #FFF;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.competences table th, 
+.competences table td {
+    padding: 15px;
+}
+
+.competences table thead {
+    background-color: var(--violet-doux);
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.competences table thead th {
+    text-align: left;
+}
+
+.competences table tbody td {
+    border-bottom: 1px solid var(--gris-clair);
+}
+
+.competences table tbody tr:nth-child(even) {
+    background-color: #FDFDFD;
+}
+
+.competences table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.competences table tbody tr:hover {
+    background-color: #F0F0F0;
+}
+
+/* --- PAGE CONTACT --- */
+.contact-container {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact-info h3 {
+    color: var(--violet-doux);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: var(--gris-fonce);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links-contact {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links-contact a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    width: fit-content;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.whatsapp { background-color: #25D366; }
+.telegram { background-color: #0088cc; }
+
+.social-links-contact a:hover {
+    opacity: 0.8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: var(--gris-tres-fonce);
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid var(--gris-clair);
+    border-radius: 5px;
+    background-color: var(--gris-tres-clair);
+    font-family: inherit;
+}
+
+.btn-submit {
+    background-color: var(--violet-doux);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--violet-fonce);
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 3rem;
+    background-color: var(--violet-doux);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    margin-bottom: 1.2rem;
+}
+
+footer a {
+    color: white;
+    font-size: 1.5rem;
     margin: 0 10px;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: opacity 0.3s;
 }
 
 footer a:hover {
-    color: var(--orange-vif);
-    transform: translateY(-3px);
+    opacity: 0.7;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        margin: 5rem 2rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
 }
