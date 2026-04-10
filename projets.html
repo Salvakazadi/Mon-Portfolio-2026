@@ -17,7 +17,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" >Accuiel</a></li>
+                <li><a href="index.html" >Acceuil</a></li>
                 <li><a href="projets.html" class="active" >Projets</a></li>
                 <li><a href="passions.html">Passions</a></li>
                 <li><a href="divertissements.html" >Divertissement</a></li>
@@ -27,102 +27,124 @@
     </header>
     <main>
         <section>
-            <h2>Voici mes Projets</h2>
-            <div>
-                <article>
+            <h2 class="section-title">Mes Réalisations</h2>
+            <div class="underline"></div>
+
+            <div class="projets-grid">
+                
+                <article class="card">
                     <figure>
-                       <img src="image/Web/ph1.webp" alt="photo1"width="100"> 
+                        <img src="image/Web/ph1.webp" alt="Site E-commerce">
                     </figure>
-                    <h3>Site E-commerce</h3>
-                    <p>Une boutique en ligne complète de développé avec HTML,CSS et JavaScript pur.</p>
-                    <div>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
+                    <div class="card-content">
+                        <h3>Site E-commerce</h3>
+                        <p>Une boutique en ligne complète développée avec HTML, CSS et JavaScript pur.</p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
                     </div>
-                    <div>
+                    <div class="card-footer">
                         <a href="#"><i class="fa-brands fa-github"></i> Code</a>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Démo</a>
                     </div>
                 </article>
-                <article>
+
+                <article class="card">
                     <figure>
-                        <img src="image/Web/ph2.jpg" alt="photo2"width="100">
+                        <img src="image/Web/ph2.jpg" alt="Gestion de Tâches">
                     </figure>
-                    <h3>Gestion de Tâches</h3>
-                    <p>Application Web pour organiser ses projets quotidiens avec stockage local.</p>
-                    <div>
-                      <span>Python</span>
-                      <span>Flask</span>  
+                    <div class="card-content">
+                        <h3>Gestion de Tâches</h3>
+                        <p>Application Web pour organiser ses projets quotidiens avec stockage local.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                        </div>
                     </div>
-                    <div>
-                       <a href="#"><i class="fa-brands fa-github"></i> Code</a>
-                       <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Démo</a> 
-                    </div>
-                </article>
-                <article>
-                    <figure>
-                        <img src="image/Web/ph3.jpg" alt="photo3"width="100">
-                    </figure>
-                    <h3>Blog Personnel</h3>
-                    <p>Projet en cours de migration vers Laravel pour apprendre le backend.</p>
-                    <div>
-                       <span>PHP</span> 
-                       <span>Laravel</span>
-                    </div>
-                    <div>
-                      <a href="#"><i class="fa-brands fa-github"></i> Code</a>
-                      <a href="#"><i class="fa-solid fa-clock"></i> Bientôt</a>  
-                    </div>
-                </article>
-                <article>
-                    <figure>
-                        <img src="image/Web/ph4.jpg" alt="photo4"width="100">
-                    </figure>
-                    <h3>Dashboard d'Analyse</h3>
-                    <p>Visualisation de données dynamiques avec Python et la bibliothèque Matplotlib.</p>
-                    <div>
-                       <span>Python</span>
-                       <span>Data</span> 
-                    </div>
-                    <div>
-                       <a href="#"><i class="fa-brands fa-github"></i> Code</a>
-                       <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Démo</a> 
-                    </div>
-                </article>
-                <article>
-                    <figure>
-                        <img src="image/Web/ph5.jpg" alt="photo5"width="100">
-                    </figure>
-                     <h3>Application Météo</h3>
-                     <p>Une Application utilisant une API en temps réel pour afficher la Météo mondiale.</p>
-                     <div>
-                       <span>JavaScript</span> 
-                       <span>API</span>
-                     </div>
-                     <div>
+                    <div class="card-footer">
                         <a href="#"><i class="fa-brands fa-github"></i> Code</a>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Démo</a>
-                     </div>
-                </article>
-                <article>
-                    <figure>
-                        <img src="image/Web/ph6.jpg" alt="photo6"width="100">
-                    </figure>
-                    <h3>Maquette Mobile UI</h3>
-                    <p>Conception d'une interface utilisateur moderne pour une application de fitness.</p>
-                    <div>
-                        <span>Figma</span>
-                        <span>Design</span>
                     </div>
-                    <div>
+                </article>
+
+                <article class="card">
+                    <figure>
+                        <img src="image/Web/ph3.jpg" alt="Blog Personnel">
+                    </figure>
+                    <div class="card-content">
+                        <h3>Blog Personnel</h3>
+                        <p>Projet en cours de migration vers Laravel pour apprendre le backend.</p>
+                        <div class="tags">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#"><i class="fa-solid fa-clock"></i> Bientôt</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure>
+                        <img src="image/Web/ph4.jpg" alt="Dashboard d'Analyse">
+                    </figure>
+                    <div class="card-content">
+                        <h3>Dashboard d'Analyse</h3>
+                        <p>Visualisation de données dynamiques avec Python et la bibliothèque Matplotlib.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Data</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Démo</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure>
+                        <img src="image/Web/ph5.jpg" alt="Application Météo">
+                    </figure>
+                    <div class="card-content">
+                        <h3>Application Météo</h3>
+                        <p>Une Application utilisant une API en temps réel pour afficher la Météo mondiale.</p>
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Démo</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure>
+                        <img src="image/Web/ph6.jpg" alt="Maquette Mobile UI">
+                    </figure>
+                    <div class="card-content">
+                        <h3>Maquette Mobile UI</h3>
+                        <p>Conception d'une interface utilisateur moderne pour une application de fitness.</p>
+                        <div class="tags">
+                            <span>Figma</span>
+                            <span>Design</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
                         <a href="#"><i class="fa-brands fa-figma"></i> Design</a>
                         <a href="#"><i class="fa-solid fa-eye"></i> Aperçu</a>
                     </div>
                 </article>
+
             </div>
         </section>
     </main>
+        
     <footer>
         <P>2026 Salva. Tous droits réservés.</P>
         <a href=""><i class="fa-brands fa-github"></i></a>

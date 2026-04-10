@@ -303,7 +303,7 @@ a.active::after {
     width: 100%;
 }
 
-/* --- SECTION HERO (Accueil) --- */
+/* --- SECTION HERO (Accueil) --- */ 
 .hero {
     display: flex;
     justify-content: center;
@@ -353,137 +353,110 @@ a.active::after {
     transform: translateY(-3px);
 }
 
-/* --- SECTION A PROPOS & TITRES --- */
-.apropos {
-    width: 800px;
-    margin: 6rem auto;
-    text-align: center;
+
+/* --- VARIABLES --- */
+:root {
+    --violet-doux: #6C63FF;
+    --violet-fonce: #534EDD;
+    --gris-tres-fonce: #333;
+    --gris-fonce: #666;
+    --gris-tres-clair: #F8F9FD;
+    --blanc: #FFFFFF;
+    --whatsapp-color: #25D366;
+    --telegram-color: #0088cc;
 }
 
-section h2 {
+
+
+
+
+/* --- MISE EN PAGE CONTACT --- */
+.contact-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+h2 {
     color: var(--violet-doux);
-    font-size: 2.6rem;
-    font-weight: 700;
-    position: relative;
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
 }
 
-section h2::after {
+/* Petit trait sous le titre */
+h2::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
     background-color: var(--violet-doux);
-    margin: 1.2rem auto;
+    margin: 10px auto;
     border-radius: 2px;
-}
-
-.apropos p {
-    margin-bottom: 2rem;
-    color: var(--gris-fonce);
-    font-size: 1.2rem;
-}
-
-/* --- TABLEAU COMPETENCES --- */
-.competences table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: #FFF;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.competences table th, 
-.competences table td {
-    padding: 15px;
-}
-
-.competences table thead {
-    background-color: var(--violet-doux);
-    color: #FFF;
-    text-transform: uppercase;
-}
-
-.competences table thead th {
-    text-align: left;
-}
-
-.competences table tbody td {
-    border-bottom: 1px solid var(--gris-clair);
-}
-
-.competences table tbody tr:nth-child(even) {
-    background-color: #FDFDFD;
-}
-
-.competences table tbody tr {
-    transition: background-color 0.3s ease;
-}
-
-.competences table tbody tr:hover {
-    background-color: #F0F0F0;
-}
-
-/* --- PAGE CONTACT --- */
-.contact-container {
-    max-width: 900px;
-    margin: 6rem auto;
-    padding: 0 2rem;
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
     gap: 4rem;
-    margin-top: 3rem;
-    background: white;
+    background-color: var(--blanc);
     padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
+/* --- INFOS DE CONTACT (Gauche) --- */
 .contact-info h3 {
-    color: var(--violet-doux);
+    color: var(--gris-tres-fonce);
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .contact-info p {
-    font-size: 1.1rem;
-    color: var(--gris-fonce);
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    margin-bottom: 1.2rem;
+    color: var(--gris-fonce);
+    font-size: 1.1rem;
 }
 
+.contact-info i {
+    color: var(--violet-doux);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+/* Boutons Réseaux Sociaux */
 .social-links-contact {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .social-links-contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
     text-decoration: none;
     color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    width: fit-content;
-    font-weight: 600;
-    transition: opacity 0.3s;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
 }
 
-.whatsapp { background-color: #25D366; }
-.telegram { background-color: #0088cc; }
+.social-links-contact .whatsapp { background-color: var(--whatsapp-color); }
+.social-links-contact .telegram { background-color: var(--telegram-color); }
 
 .social-links-contact a:hover {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
+/* --- FORMULAIRE (Droite) --- */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -493,77 +466,460 @@ section h2::after {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 .form-group label {
-    color: var(--gris-tres-fonce);
     font-weight: 600;
+    color: var(--gris-tres-fonce);
 }
 
 .form-group input {
-    padding: 12px;
-    border: 1px solid var(--gris-clair);
-    border-radius: 5px;
-    background-color: var(--gris-tres-clair);
-    font-family: inherit;
+    padding: 12px 15px;
+    border: 2px solid var(--gris-tres-clair);
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--violet-doux);
 }
 
 .btn-submit {
     background-color: var(--violet-doux);
     color: white;
-    border: none;
     padding: 15px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .btn-submit:hover {
     background-color: var(--violet-fonce);
-}
-
-/* --- FOOTER --- */
-footer {
-    margin-top: 3rem;
-    background-color: var(--violet-doux);
-    padding: 3rem 0;
-    text-align: center;
-}
-
-footer p {
-    color: white;
-    margin-bottom: 1.2rem;
-}
-
-footer a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: opacity 0.3s;
-}
-
-footer a:hover {
-    opacity: 0.7;
+    transform: translateY(-2px);
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        margin: 5rem 2rem;
-    }
-    
     .contact-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
         padding: 2rem;
+        gap: 2rem;
     }
     
-    header {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem;
+    h2 { font-size: 2rem; }
+}
+
+
+
+/* --- MISE EN PAGE PROJET --- */
+
+
+
+
+
+/* --- 1. CONFIGURATION DE BASE --- */
+:root {
+    --violet: #6C63FF;
+    --violet-fonce: #534EDD;
+    --fond: #F8F9FD;
+    --texte: #666;
+    --titre: #333;
+    --blanc: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fond);
+    font-family: 'Roboto', sans-serif;
+    color: var(--titre);
+    line-height: 1.6;
+}
+
+/* --- 2. STRUCTURE DU CONTENU --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--violet);
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: var(--violet);
+    margin: 0 auto 50px auto;
+    border: none;
+    border-radius: 2px;
+}
+
+/* --- 3. LA GRILLE (POUR ALIGNER LES 3 PHOTOS) --- */
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 colonnes égales */
+    gap: 30px; /* Espace identique entre chaque carte */
+    align-items: stretch; /* Force les cartes à avoir la même hauteur totale */
+}
+
+/* --- 4. STYLE DES CARTES --- */
+article.card {
+    background: var(--blanc);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column; /* Organise le contenu verticalement */
+    transition: transform 0.3s ease;
+}
+
+article.card:hover {
+    transform: translateY(-10px);
+}
+
+/* --- 5. ALIGNEMENT DES PHOTOS --- */
+article.card figure {
+    width: 100%;
+    height: 200px; /* HAUTEUR FIXE : assure que les 3 photos sont au même niveau */
+    overflow: hidden;
+    background-color: #eee;
+}
+
+article.card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre l'image sans la déformer pour remplir les 200px */
+    display: block;
+}
+
+/* --- 6. TEXTE ET BADGES --- */
+.card-content {
+    padding: 20px;
+    flex-grow: 1; /* Pousse le footer vers le bas pour que tout soit aligné */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    color: var(--violet);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--texte);
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Aligne les tags au même niveau */
+    padding-bottom: 15px;
+}
+
+.tags span {
+    background: #F0EFFF;
+    color: var(--violet);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* --- 7. FOOTER DE CARTE (CODE / DEMO) --- */
+.card-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #EEEEEE;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FAFAFA;
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: var(--titre);
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-footer a:hover {
+    color: var(--violet);
+}
+
+/* --- 8. RESPONSIVE --- */
+@media (max-width: 992px) {
+    .projets-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
     }
 }
+
+
+/* --- 1. CONFIGURATION GLOBALE (Si pas déjà dans style.css) --- */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Style du titre de la section "Voici mes divertissements" */
+.section-title {
+    text-align: center;
+    color: var(--violet-primaire);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Style de la barre violette sous le titre */
+.underline {
+    width: 60px;
+    height: 4px;
+    background-color: var(--violet-primaire);
+    margin: 0 auto 50px auto;
+    border: none;
+    border-radius: 2px;
+}
+
+/* --- 3. LA GRILLE DE CARTES (passions-grid) --- */
+/* Organise les articles en 3 colonnes égales */
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur une ligne */
+    gap: 30px; /* Espace entre les cartes */
+    align-items: stretch; /* Force les cartes à avoir la même hauteur */
+}
+
+/* --- 4. STYLE DE CHAQUE CARTE (card) --- */
+.card {
+    background-color: var(--blanc);
+    border-radius: 15px; /* Bords arrondis modernes */
+    overflow: hidden; /* Pour que l'image respecte les bords arrondis */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Ombre très douce */
+    display: flex;
+    flex-direction: column; /* Organise le contenu verticalement */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+}
+
+/* Animation au survol de la carte */
+.card:hover {
+    transform: translateY(-10px); /* La carte "monte" légèrement */
+    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.15); /* L'ombre devient violette et plus forte */
+}
+
+/* --- 5. IMAGE DE LA CARTE (figure) --- */
+.card figure {
+    width: 100%;
+    height: 220px; /* Hauteur fixe pour l'uniformité */
+}
+
+.card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre l'image sans la déformer */
+    display: block;
+}
+
+/* --- 6. CONTENU TEXTUEL (card-content) --- */
+.card-content {
+    padding: 25px;
+    flex-grow: 1; /* Pousse le bas de la carte si le texte est court */
+    display: flex;
+    flex-direction: column; /* Organise verticalement */
+}
+
+/* Titre du divertissement (H3) */
+.card-content h3 {
+    font-size: 1.25rem;
+    color: var(--noir-titre);
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Paragraphe de description */
+.card-content p {
+    font-size: 0.95rem;
+    color: var(--gris-texte);
+    margin-bottom: 25px; /* Espace avant la section auteur */
+    flex-grow: 1; /* Aligne le bas même si le paragraphe est court */
+}
+
+/* --- 7. ZONE AUTEUR (author-meta) --- */
+/* Détail supplémentaire pour aligner proprement l'avatar et les infos */
+.author-meta {
+    display: flex;
+    align-items: center; /* Aligne verticalement au centre */
+    border-top: 1px solid #EEEEEE; /* Petite ligne séparatrice discrète */
+    padding-top: 15px;
+    margin-top: auto; /* Force l'alignement en bas de la carte */
+}
+
+/* L'Avatar circulaire */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Image parfaitement ronde */
+    object-fit: cover;
+    border: 2px solid #F0EFFF; /* Petite bordure violette très claire */
+    margin-right: 12px;
+}
+
+/* Infos de l'auteur (Nom + Date) */
+.author-info {
+    display: flex;
+    flex-direction: column; /* Superpose le nom et la date */
+}
+
+.author-info .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--noir-titre);
+}
+
+.author-info .date {
+    font-size: 0.8rem;
+    color: var(--gris-texte);
+}
+
+/* Lien dans la date (ex: Ruby on Rails, WordPress) */
+.author-info .date a {
+    color: var(--violet-primaire);
+    text-decoration: none; /* Enlève le soulignement */
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.author-info .date a:hover {
+    color: var(--violet-fonce);
+    text-decoration: underline; /* Souligne au survol pour l'accessibilité */
+}
+
+/* --- VARIABLES --- */
+:root {
+    --violet-principal: #6C63FF;
+    --violet-fonce: #534EDD;
+    --fond-page: #F8F9FD;
+    --blanc: #FFFFFF;
+    --gris-texte: #666;
+    --noir-titre: #333;
+}
+
+/* --- STRUCTURE --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--violet-principal);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: var(--violet-principal);
+    margin: 0 auto 50px auto;
+    border: none;
+    border-radius: 2px;
+}
+
+/* --- LA GRILLE DES PASSIONS (2x2 sur PC) --- */
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour des cartes plus larges et immersives */
+    gap: 30px;
+}
+
+/* --- STYLE DES CARTES --- */
+article.card {
+    background: var(#0088cc);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(108, 99, 255, 0.1);
+}
+
+/* Images des Passions */
+article.card figure {
+    width: 100%;
+    height: 250px; /* Un peu plus haut que les projets pour le côté visuel */
+    overflow: hidden;
+}
+
+article.card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenu texte */
+.card-content {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+article.card h3 {
+    color: var(--noir-titre);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+article.card p {
+    color: var(--gris-texte);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* Badges de Passion (Tags) */
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto; /* Aligne les tags en bas */
+}
+
+.tags span {
+    background: #aadbee;
+    color: var(--violet-principal);
+    padding: 6px 15px;
+    border-radius: 50px; /* Forme pilule très élégante */
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
